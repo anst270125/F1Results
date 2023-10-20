@@ -1,0 +1,60 @@
+.page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-clip: border-box;
+
+}
+
+.page-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 90%;
+    min-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.results {
+    height: 100%;
+    overflow: hidden;
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.season-not-chosen {
+    text-align: center;
+    font-size: 3em;
+    line-height: 50px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+mat-spinner {
+    transform: scale(1.5);
+}
+
+//trouble with scrolling if no wrapper
+.wrapper {
+    display: block;
+    margin-bottom: auto;
+    overflow-y: scroll;
+    width: 100%;
+    position: relative;
+}

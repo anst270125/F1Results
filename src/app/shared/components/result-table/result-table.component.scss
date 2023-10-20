@@ -1,0 +1,10 @@
+* {
+    text-align: center !important;
+}
+
+table {
+    background-color: transparent;
+    &.big * {
+        font-size: 1.075em;
+    }
+}

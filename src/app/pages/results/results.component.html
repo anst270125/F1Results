@@ -1,0 +1,36 @@
+<div class="page-container">
+    <div class="page-content">
+
+        <app-year-selector path="/results" (yearChange)="yearChanged($event)"></app-year-selector>
+
+        <button mat-flat-button *ngIf="races" (click)="expandPanels()" class="expand-btn open">Expand all</button>
+        <button mat-flat-button *ngIf="races" (click)="closePanels()" class="expand-btn close">Shrink all</button>
+
+        <div class="results">
+            <span *ngIf="!selectedSeason" class="season-not-chosen">Choose a season to see results</span>
+            <mat-spinner *ngIf="selectedSeason && !races"></mat-spinner>
+            <div class="wrapper" *ngIf="races">
+                <mat-accordion [multi]="true" class="races">
+                    <mat-expansion-panel *ngFor="let race of races">
+                        <mat-expansion-panel-header collapsedHeight="70px" expandedHeight="70px" class="race-header">
+                            <mat-panel-title class="race-title">
+                                <span class="name">
+                                    {{race.name}}
+                                </span>
+                                <span class="circuit-info">
+                                    ({{race.circuitName}}, {{race.location}})
+                                </span>
+
+                            </mat-panel-title>
+                            <mat-panel-description class="race-date">
+                                {{race.date | date: 'MMMM d'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <app-result-table [results]="race.results"></app-result-table>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+
+    </div>
+</div>

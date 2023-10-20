@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("assets/fonts/Poppins.ttf");
+}
+
+/* ===== Scrollbar CSS ===== */
+$scrollbar-color: white;
+$scrollbar-track-color: #ffffff00;
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: $scrollbar-color $scrollbar-track-color;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 0.45vw;
+}
+
+*::-webkit-scrollbar-track {
+    background: $scrollbar-track-color;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-color;
+    border-radius: 5px;
+    border: 1px none $scrollbar-track-color;
+}

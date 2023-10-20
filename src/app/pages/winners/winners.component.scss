@@ -1,0 +1,9 @@
+@import "src/app/shared/shared.scss";
+
+.page-container {
+    background-image: url("/assets/images/bg2.jpg");
+
+    .wrapper {
+        padding: 15px;
+    }
+}

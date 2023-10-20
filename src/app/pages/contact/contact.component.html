@@ -1,0 +1,38 @@
+<div class="page-container">
+    <div class="page-content">
+
+        <p class="title">Contact driver</p>
+
+        <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="sendMessage()">
+            <mat-form-field appearance="outline">
+                <mat-label>Driver*</mat-label>
+                <input type="text" placeholder="Pick a driver" matInput formControlName="driver"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredDrivers | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="contactForm.get('driver')?.invalid">Select a driver</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Subject</mat-label>
+                <input type="text" matInput formControlName="subject">
+                <mat-error *ngIf="contactForm.get('subject')?.invalid">Add a subject</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message" rows="5" maxlength="1000"
+                    placeholder="Dear ..."></textarea>
+                <mat-error *ngIf="contactForm.get('message')?.invalid">Add a message</mat-error>
+            </mat-form-field>
+
+            <button type="submit" [disabled]="contactForm.invalid" color="accent" mat-flat-button class="send-button">
+                SEND
+            </button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="page-container">
+    <div class="page-content">
+
+        <app-year-selector path="/winners" (yearChange)="onYearChange($event)"></app-year-selector>
+
+        <div class="results">
+            <span *ngIf="!selectedSeason" class="season-not-chosen">Choose a season to see standings</span>
+            <mat-spinner *ngIf="selectedSeason && !standings"></mat-spinner>
+            <div class="wrapper" *ngIf="standings">
+                <app-result-table [results]="standings" class="standings" [big]="true"></app-result-table>
+            </div>
+        </div>
+
+    </div>
+</div>

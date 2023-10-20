@@ -1,0 +1,62 @@
+@import "src/app/shared/shared.scss";
+
+.page-container {
+    background-image: url("/assets/images/bg1.jpg");
+
+    .expand-btn {
+        position: absolute;
+        top: 50px;
+        z-index: 999 !important;
+
+        &.open {
+            left: 0;
+            margin: 0 50px;
+        }
+
+        &.close {
+            right: 0;
+            margin: 0 60px;
+        }
+    }
+
+    .wrapper {
+        padding-right: 5px;
+        .races {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+
+            .race-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.3em;
+                font-family: "Poppins";
+                .race-title {
+                    width: 70%;
+                    flex: 1 1 auto;
+                    line-height: 1.32em;
+                    .name {
+                        font-weight: 600;
+                    }
+
+                    .circuit-info {
+                        margin-left: 10px;
+                        font-size: 0.85em;
+                        color: rgba(0, 0, 0, 0.75);
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .race-date {
+                    justify-content: center;
+                    width: 30%;
+                    flex: 1 1 auto;
+                }
+            }
+        }
+    }
+}
